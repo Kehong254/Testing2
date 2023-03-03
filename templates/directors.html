@@ -10,13 +10,11 @@
 
     {% for row in rows %}
     <p>directors:
-       <b> <a href={{ url_for('directors_details', = row['Name']) }}>{{row["Name"]}}</a></b> |
-       {{row["Rank"]}},
-        {{ row["Name"]}},
-       {{row['Platform']},
-	   {{row["Year"]}},
-        {{ row["Genre"]}},
-       {{row['Publisher']}.
+       <b> <a href={{ url_for('directors_details', Director = row['Name']) }}>{{row["Name"]}}</a></b> |
+       {{row["Director"]}},
+        {{order[0]row["Time_span"]}},
+       {{order[0]row['Total_Money']},
+	   {{order[0]row["Highest_rating"]}},
     </p>
     {% endfor %}
 </body>

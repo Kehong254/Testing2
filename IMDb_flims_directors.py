@@ -21,6 +21,16 @@ def films():
     conn.close()
     return render_template('films.html', rows=rows)
 
+@app.route('/films_details_details/<Movie_Title>')
+def customer_details(Movie_Title):
+    conn = sqlite3.connect(db_name)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    cur.execute("select * from films, films WHERE Movie_Title=?",(Movie_Title))
+    customer = cur.fetchall()
+    conn.close()
+    return render_template('films_details.html', films=films)
+
 @app.route('/directors')
 def directors():
     conn = sqlite3.connect(db_name)

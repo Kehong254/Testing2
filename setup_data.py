@@ -7,7 +7,6 @@ cur = conn.cursor()
 
 # drop the data from the table so that if we rerun the file, we don't repeat values
 conn.execute('DROP TABLE IF EXISTS IMDb_All_Genres_etf_clean1')
-print("table dropped successfully");
 conn.execute('DROP TABLE IF EXISTS Director')
 print("table dropped successfully");
 
