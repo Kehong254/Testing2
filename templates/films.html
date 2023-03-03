@@ -5,6 +5,22 @@
     <title>Films</title>
 </head>
 <body>
+    <h1>IMDb: Films</h1>
+
+    {% for row in rows %}
+    <p>Films:
+       <b> <a href={{ url_for('Films_details', Name= row['Name']) }}>{{row["Name"]}}</a></b> |
+       {{row["Films_details"]}} |
+        {{ row["Movie_Title"]}} |
+       {{row['Year']}}
+        {{row['Director']}} |
+        {{row['Rating']}}
+        {{row['Runtime']}}
+        {{row['Censor']}}
+        {{row['Total_Gross']}}
+        {{row['main_genre']}}
+    </p>
+    {% endfor %}
 
 </body>
 </html>
