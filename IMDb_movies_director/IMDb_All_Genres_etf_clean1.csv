@@ -1,4 +1,4 @@
-Movie_Title,Year,Director,Rating,Runtime(Mins),Censor,Total_Gross,main_genre
+Movie_Title,Year,Director,Rating,Runtime,Censor,Total_Gross,main_genre
 Kantara,2022,Rishab Shetty,9.3,148,UA,$340.23M,Action
 The Dark Knight,2008,Christopher Nolan,9,152,UA,$534.86M,Action
 The Lord of the Rings: The Return of the King,2003,Peter Jackson,9,201,U,$377.85M,Action

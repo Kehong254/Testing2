@@ -4,7 +4,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # database details - to remove some duplication
-db_name = 'MIDb_films_directors.db'
+db_name = 'IMDb_films_directors.db'
 
 @app.route('/')
 def index():
@@ -31,7 +31,6 @@ def directors():
     rows = cur.fetchall()
     conn.close()
     return render_template('directors.html', rows=rows)
-
 
 
 
