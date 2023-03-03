@@ -12,9 +12,9 @@
     <p>directors:
        <b> <a href={{ url_for('directors_details', Director = row['Name']) }}>{{row["Name"]}}</a></b> |
        {{row["Director"]}},
-        {{order[0]row["Time_span"]}},
-       {{order[0]row['Total_Money']},
-	   {{order[0]row["Highest_rating"]}},
+        {{row["Time_span"]}},
+       {{row['Total_Money']},
+	   {{row["Highest_rating"]}},
     </p>
     {% endfor %}
 </body>

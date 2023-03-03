@@ -11,13 +11,13 @@
     <p>Films:
        <b> <a href={{ url_for('films_details', Movie_Title= row['Name']) }}>{{row["Name"]}}</a></b> |
         {{ row["Movie_Title"]}} |
-       {{order[0]['Year']}}
-        {{order[0]row['Director']}} |
-        {{order[0]row['Rating']}}
-        {{order[0]row['Runtime']}}
-        {{order[0]row['Censor']}}
-        {{order[0]row['Total_Gross']}}
-        {{order[0]row['main_genre']}}
+       {{row['Year']}}
+        {{row['Director']}} |
+        {{row['Rating']}}
+        {{row['Runtime']}}
+        {{row['Censor']}}
+        {{row['Total_Gross']}}
+        {{row['main_genre']}}
     </p>
     {% endfor %}
 

@@ -52,5 +52,7 @@ def directors_details(Director):
     conn.close()
     return render_template('directors_details.html', directors=directors)
 
+app.run()
+
 
 
