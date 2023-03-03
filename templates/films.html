@@ -9,11 +9,12 @@
 
     {% for row in rows %}
     <p>Films:
-       <b> <a href={{ url_for('films_details', Director= row['Director']) }}>{{row["Movie_Title"]}}</a></b> |
+
         {{ row["Movie_Title"]}} |
-       {{row['Year']}}
-        {{row['Director']}} |
+       {{row['Year']}} |
+        <a href={{ url_for('films_details', Movie_Title= row['MovieTitle']) }}>{{row['Director']}}</a>
         {{row['Rating']}}
+
         {{row['Runtime']}}
         {{row['Censor']}}
         {{row['Total_Gross']}}
