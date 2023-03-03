@@ -5,6 +5,10 @@ import sqlite3
 conn = sqlite3.connect('IMDb_films_directors.db')
 cur = conn.cursor()
 
+# drop the data from the table so that if we rerun the file, we don't repeat values
+conn.execute('DROP TABLE IF EXISTS IMDb_All_Genres_etf_clean1')
+print("table dropped successfully");
+
 # create table
 cur.execute('''CREATE TABLE IMDb_All_Genres_etf_clean1
                (Movie_Title TEXT, Year TEXT, Director TEXT, Rating TEXT, Runtime TEXT, Censor TEXT, Total_Gross TEXT, main_genre TEXT)''')
