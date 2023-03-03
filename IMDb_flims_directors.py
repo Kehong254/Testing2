@@ -21,13 +21,13 @@ def films():
     conn.close()
     return render_template('films.html', rows=rows)
 
-@app.route('/films_details_details/<Movie_Title>')
-def customer_details(Movie_Title):
+@app.route('/films_details/<Movie_Title>')
+def films_details(Movie_Title):
     conn = sqlite3.connect(db_name)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
-    cur.execute("select * from films, films WHERE Movie_Title=?",(Movie_Title))
-    customer = cur.fetchall()
+    cur.execute("select * from films f join directors d on f.Director_ID = d.ID where f.Movie_Title = ?", (Movie_Title,))
+    films = cur.fetchall()
     conn.close()
     return render_template('films_details.html', films=films)
 
@@ -42,6 +42,15 @@ def directors():
     conn.close()
     return render_template('directors.html', rows=rows)
 
+@app.route('/directors_details/<Director>')
+def directors_details(Director):
+    conn = sqlite3.connect(db_name)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    cur.execute("select * from directors d join films f on d.ID = f.Director_ID where d.Director = ?", (Director,))
+    directors = cur.fetchall()
+    conn.close()
+    return render_template('directors_details.html', directors=directors)
 
 
 
