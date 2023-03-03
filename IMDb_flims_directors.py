@@ -47,10 +47,11 @@ def directors_details(Director):
     conn = sqlite3.connect(db_name)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
-    cur.execute("select * from directors d join films f on d.ID = f.Director_ID where d.Director = ?", (Director,))
+    cur.execute("SELECT DISTINCT d.*, f.* FROM directors d JOIN films f ON d.ID = f.Director_ID WHERE d.Director = ?", (Director,))
     directors = cur.fetchall()
     conn.close()
     return render_template('directors_details.html', directors=directors)
+
 
 app.run()
 

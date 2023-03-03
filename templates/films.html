@@ -12,7 +12,9 @@
 
         {{ row["Movie_Title"]}} |
        {{row['Year']}} |
-        <a href={{ url_for('films_details', Movie_Title= row['MovieTitle']) }}>{{row['Director']}}</a>
+
+        <a href="{{ url_for('directors_details', Director=row['Director']) }}">{{row['Director']}}</a>
+
         {{row['Rating']}}
 
         {{row['Runtime']}}
