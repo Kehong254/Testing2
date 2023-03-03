@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Directors</title>
 </head>
 <body>
 
+    <h1>The Director list</h1>
+
+    {% for row in rows %}
+    <p>directors:
+       <b> <a href={{ url_for('directors_details', = row['Name']) }}>{{row["Name"]}}</a></b> |
+       {{row["Rank"]}},
+        {{ row["Name"]}},
+       {{row['Platform']},
+	   {{row["Year"]}},
+        {{ row["Genre"]}},
+       {{row['Publisher']}.
+    </p>
+    {% endfor %}
 </body>
 </html>
