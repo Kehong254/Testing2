@@ -41,12 +41,13 @@ with open('IMDb_movies_director/Director.csv', 'r', newline='') as f:
     next(reader) # skip the header line
     for row in reader:
         print(row)
+
         Director = row[0]
         Time_span = row[1]
         Total_Money = row[2]
         Highest_rating = row[3]
 
-        cur.execute('INSERT INTO Director VALUES (?,?,?,?,?,?,?,?)', (Director, Time_span, Total_Money, Highest_rating))
+        cur.execute('INSERT INTO Director VALUES (?,?,?,?)', (Director, Time_span, Total_Money, Highest_rating))
         conn.commit()
 
 print("data parsed successfully")
