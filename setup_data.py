@@ -10,11 +10,11 @@ conn.execute('DROP TABLE IF EXISTS films')
 conn.execute('DROP TABLE IF EXISTS directors')
 print("table dropped successfully");
 
-# create table
+# create tables
 cur.execute('''CREATE TABLE films
-               (Movie_Title TEXT, Year TEXT, Director TEXT, Rating TEXT, Runtime TEXT, Censor TEXT, Total_Gross TEXT, main_genre TEXT)''')
+               (Movie_Title TEXT PRIMARY KEY, Year TEXT, Director TEXT, Rating TEXT, Runtime TEXT, Censor TEXT, Total_Gross TEXT, main_genre TEXT)''')
 cur.execute('''CREATE TABLE directors
-               (Director TEXT, Time_span TEXT, Total_Money TEXT, Highest_rating TEXT)''')
+               (Director TEXT INTEGER PRIMARY KEY, Time_span TEXT, Total_Money TEXT, Highest_rating TEXT)''')
 
 # open the file to read it into the database
 with open('IMDb_movies_director/IMDb_All_Genres_etf_clean1.csv', 'r', newline='') as f:
@@ -32,7 +32,7 @@ with open('IMDb_movies_director/IMDb_All_Genres_etf_clean1.csv', 'r', newline=''
         Total_Gross = row[6]
         main_genre = row[7]
 
-        cur.execute('INSERT INTO IMDb_All_Genres_etf_clean1 VALUES (?,?,?,?,?,?,?,?)', row)
+        cur.execute('INSERT INTO films VALUES (?,?,?,?,?,?,?,?)', row)
         conn.commit()
 
 with open('IMDb_movies_director/Director.csv', 'r', newline='') as f:
@@ -46,7 +46,7 @@ with open('IMDb_movies_director/Director.csv', 'r', newline='') as f:
         Total_Money = row[2]
         Highest_rating = row[3]
 
-        cur.execute('INSERT INTO Director VALUES (?,?,?,?)', row)
+        cur.execute('INSERT INTO directors VALUES (?,?,?,?)', (Director, Time_span, Total_Money, Highest_rating))
         conn.commit()
 
 print("data parsed successfully")
