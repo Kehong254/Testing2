@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>IMDb Movie Ratings & Directors</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+            <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      border: 1px solid black;
+    }
+
+    .content {
+
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-
+<div class="content">
     <h1>IMDb Movie Ratings & Directors</h1>
 
 
-    <h3>You name it, we might sell it</h3>
-    <p>Look at the data in the other pages and fix errors as you find them</p>
-    <p><a href={{ url_for('films') }}>Films</a> | <a href={{ url_for('directors') }}>Directors</a></p>
-    <p>This is an idea of how you might do the backend of a site. All of the authentication/admin stuff is missing,
-      as are forms for entering orders and customer details. You just see what the orders are, and who ordered what.
-    </p>
 
-    <p>Supply a dashboard to show the number of orders, and the amount spent by customers.</p>
+    <p>Click for details.</p>
+    <p><a href={{ url_for('films') }}>Films</a> | <a href={{ url_for('directors') }}>Directors</a></p>
+</div>
 
 </body>
 </html>
