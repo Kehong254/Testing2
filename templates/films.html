@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Films</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+        <title>FILMS information</title>
+
 </head>
 <body>
-    <h1>IMDb: Films</h1>
+<div class="container">
+  <h1 style="text-align:center;">IMDb: Films List</h1>
 
-    {% for row in rows %}
-    <p>Films:
 
-        {{ row["Movie_Title"]}} |
-       {{row['Year']}} |
-
-        <a href="{{ url_for('directors', Director=row['Director']) }}">{{row['Director']}}</a>
-
-        {{row['Rating']}}
-
-        {{row['Runtime']}}
-        {{row['Censor']}}
-        {{row['Total_Gross']}}
-        {{row['main_genre']}}
-    </p>
-    {% endfor %}
-
+  <table>
+    <thead>
+      <tr>
+        <th>Movie_Title</th>
+        <th>Year</th>
+        <th>Director</th>
+        <th>Rating</th>
+        <th>Runtime</th>
+        <th>Censor</th>
+        <th>Total_Gross</th>
+        <th>main_genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td><a href={{ url_for('directors') }}>Orders>{{ row[2] }}</a></td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+        <td>{{ row[6] }}</td>
+        <td>{{ row[7] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
 </body>
 </html>
