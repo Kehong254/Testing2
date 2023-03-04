@@ -2,20 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Directors</title>
+    <title>Type information</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<div class="container">
+  <h1 style="text-align:center;">Director LIST</h1>
 
-    <h1>The Director list</h1>
+  <table style="text-align:center;">
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>TIME SPAN</th>
+        <th>TOTAL MONEY</th>
+        <th>HIGHEST RATING</th>
 
-    {% for row in rows %}
-    <p>directors:
 
-       {{row["Director"]}},
-        {{row["Time_span"]}},
-       {{row["Total_Money"]}},
-	   {{row["Highest_rating"]}},
-    </p>
-    {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
