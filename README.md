@@ -6,7 +6,7 @@ IMDb movie rating app, a python Flask web application for managing data on the I
 1.To get start, clone from git.
 
 ```
-git clone 
+git clone https://github.com/Kehong254/assignment.git
 ```
 
 2. Running this application, you should have Python3 and Flask framework installed on your computer. you can install Flask by running the command below:
