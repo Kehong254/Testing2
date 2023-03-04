@@ -42,9 +42,6 @@ def directors():
     conn.close()
     return render_template('directors.html', rows=rows)
 
-
-
-
 app.run()
 
 
