@@ -1,17 +1,31 @@
-# IMDb movie rating app
-A python Flask web application for managing data on the IMDb website. The application uses a SQLite database to store ratings for a total of 5000 movies on the IMDb website as well as movie information and director information.
+# What it is?
+IMDb movie rating app, a python Flask web application for managing data on the IMDb website. The application uses a SQLite database to store ratings for a total of 5000 movies on the IMDb website as well as movie information and director information.
 
 ## Installation of Framework
-Running this application, you should have Python3 and Flask framework installed on your computer. you can install Flask by running the command below:
+
+1.To get start, clone from git.
+
+```
+git clone 
+```
+
+2. Running this application, you should have Python3 and Flask framework installed on your computer. you can install Flask by running the command below:
+
+```
 pip install flask
+```
 
 ## Run web application
+
 Copy those code in your terminal:
 
+```
 cd assignment;
 export FLASK_APP=IMDb_flims_directors.py;
 export FLASK_ENV=development;
-python3 -m flask run;
+python3 -m flask run -h 0.0.0.0;
+```
+
 Once the app is running, you can access it by visiting http://localhost:5000 in your web browser.
 
 ## The application has two main pages.
@@ -29,4 +43,4 @@ You can switch between pages using the hyperlinks provided on the page.
 <p>templates/films.html: This file defines the information on the movie page as well as the jump links and html code.</p>
 <p>templates/directors.html: This file defines the information and html code for the director's page.</p>
 <p>templates/films_details.html: This file defines the information and html code for the movie page.</p>
-<p></p>
+
