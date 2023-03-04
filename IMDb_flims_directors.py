@@ -42,7 +42,8 @@ def directors():
     conn.close()
     return render_template('directors.html', rows=rows)
 
-app.run()
+if __name__ == '__main__':
+    app.run()
 
 #Error test
 @app.route('/films')
