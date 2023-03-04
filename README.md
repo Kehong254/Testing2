@@ -20,10 +20,10 @@ pip install flask
 Copy those code in your terminal:
 
 ```
-cd assignment;
-export FLASK_APP=IMDb_flims_directors.py;
-export FLASK_ENV=development;
-python3 -m flask run -h 0.0.0.0;
+cd assignment
+export FLASK_APP=IMDb_flims_directors.py
+export FLASK_ENV=development
+python3 -m flask run -h 0.0.0.0
 ```
 
 Once the app is running, you can access it by visiting http://localhost:5000 in your web browser.
