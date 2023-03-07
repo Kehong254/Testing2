@@ -1,82 +1,96 @@
-
 .container {
-	/* 溢出隐藏 */
+	/* Overflow hide */
 	overflow: hidden;
-	/* 外边距 上下为0  左右为20px */
+	/* Margins 0 top and bottom 20px left and right */
 	margin: 0 20px;
 	background-color: #fff;
-	/* 盒子阴影 */
+	/* Box Shadows */
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
+
 .container table {
-	/* 让表格的边框合并在一起 */
+	/* Make the borders of the table merge together */
 	border-collapse: collapse;
 }
-/* 在做pc端 不注释掉看不到效果 */
+
+/* I'm working on the PC side and can't see the effect without commenting it out */
 .container table thead tr th {
 	color: #fff;
 	background-color: #4fc3a1;
 }
-/* 还是取单数 */
-.container table thead tr th:nth-child(odd) {
-	background-color: #324960;
+
+.container table thead tr th:nth-child(odd),
+.container table tbody tr:nth-child(odd) {
+	background-color: #ccc;
 }
+
 .container table thead tr th,
 .container table tbody tr td {
 	text-align: center;
-	/* 先不加 大屏就正常了 */
+	/* Don't add it yet The big screen will be normal */
 	padding: 20px 40px;
 }
+
 .container table tbody tr td {
 	border: 1px solid rgb(200, 200, 200);
 }
+
 .container table tbody tr:nth-child(odd) {
 	background-color: #f8f8f8;
 }
-/* 先做移动端 */
-/* 媒体查询 当页面宽度小于765px时执行里面的代码 */
+
+/* Mobile first */
+/* Media queries Execute the code inside when the page width is less than 765px */
 @media (max-width: 765px) {
 	.container table {
-		/* 让thead和tbody水平排列 */
+		/* Make the head and tbody horizontally aligned */
 		display: flex;
 	}
+
 	.container table thead tr {
-		/* 让thead>tr下的每一个元素称为弹性项目*/
+		/* Let each element under thead>tr be called a resilient item*/
 		display: flex;
-		/* 改变主轴的方向 让弹性项目垂直排列*/
+		/* Change the orientation of the spindle so that the flexible items are aligned vertically*/
 		flex-direction: column;
 	}
+
 	.container table tbody {
 		display: flex;
-		/* 溢出盒子时 自动适配滚动条 */
+		/* Automatic adaptation of scrollbars when overflowing boxes */
 		overflow: auto;
 	}
+
 	.container table tbody tr {
-		/* 同上 */
+		/* Ibid */
 		display: flex;
 		flex-direction: column;
 	}
+
 	.container table thead tr th,
 	.container table tbody tr td {
-		/* 文字左对齐 */
+		/* Left-justified text */
 		text-align: left;
 		width: 120px;
 		padding: 20px;
-		/* 先把所有边框清为0 再分别设置即可 */
+		/* Clear all borders to 0 first and then set them individually */
 		border: 0;
 		border-bottom: 1px solid rgb(200, 200, 200);
 		border-right: 1px solid rgb(200, 200, 200);
 	}
-	/* 去除每一行的最后一个单元格的下边框*/
+
+	/* Remove the bottom border of the last cell of each row*/
 	.container table thead tr th:last-child,
 	.container table tbody tr td:last-child {
 		border-bottom: 0;
 	}
+
 	.container table tbody tr td:nth-child(odd) {
-		/* 让tbody下的每一行的单数的单元格的背景颜色为#f8f8f8 */
+		/* Let the odd number of cells in each row under tbody have a background colour of#f8f8f8 */
 		background-color: #f8f8f8;
 	}
+
 	.container table tbody tr:nth-child(odd) {
 		background-color: transparent;
 	}
 }
+
